@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import "./sass/custom.scss";
 import "react-toastify/dist/ReactToastify.css";
@@ -9,8 +9,7 @@ import store from "./store";
 import reportWebVitals from "./reportWebVitals";
 import { ToastContainer } from "react-toastify";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <App />
@@ -19,7 +18,8 @@ root.render(
         position="top-center"
       />
     </BrowserRouter>
-  </Provider>
+  </Provider>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
